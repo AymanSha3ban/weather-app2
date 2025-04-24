@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="loading" id="loading">Loading...</div>
+
+    <div class="header-bar">
+        <div class="logo">SkyCast 🌦️</div>
+        <select class="select-lang" id="languageSelect" onchange="setLanguage()">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+        </select>
+    </div>
+
+    <div class="overlay text-center">
+        <div class="custom-container">
+            <h1 id="title">Check the Weather</h1>
+
+            <div class="layout-grid">
+                <div class="form-wrapper">
+                    <input id="cityInput" type="text" class="input-text" placeholder="Enter city name">
+                    <button class="btn-search" onclick="getWeather()">Search</button>
+                </div>
+
+                <div class="card-custom">
+                    <h3 id="location">location</h3>
+                    <h2 id="Day">Day</h2>
+                    <h2 id="temperature">temperature</h2>
+                    <p id="description">description</p>
+                    <small id="extra">extra</small>
+                </div>
+
+                <div class="history-container">
+                    <div class="history-card" id="day1">Day 1 </div>
+                    <div class="history-card" id="day2">Day 2</div>
+                    <div class="history-card" id="day3">Day 3</div>
+                </div>
+
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <video id="bg-video" class="bg-video" autoplay loop muted>
+        <source id="video-source" src="default.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script src="script.js"></script>
+</body>
+</html>
